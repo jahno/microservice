@@ -1,0 +1,19 @@
+une application de commerce électronique qui permet aux utilisateurs d'acheter des produits en ligne. Cette application est  divisée en plusieurs microservices
+
+Service d'authentification : Ce microservice gère l'authentification des utilisateurs. Lorsqu'un utilisateur tente de se connecter, ce service vérifie ses informations d'identification et renvoie un jeton d'accès s'il est authentifié avec succès.
+
+Service de catalogue : Ce microservice gère les informations sur les produits proposés sur le site. Il stocke des informations telles que les noms de produits, les descriptions, les images, les prix, etc.
+
+Service de commande : Ce microservice gère les commandes passées par les utilisateurs. Lorsqu'un utilisateur passe une commande, ce service crée une commande et la stocke dans une base de données.
+
+Ces microservices communiquent entre eux via une file d'attente Kafka. 
+Lorsqu'un utilisateur passe une commande, le service de commande envoie un message à la file d'attente Kafka, qui est ensuite consommé par le service de catalogue pour mettre à jour le stock des produits. 
+De même, lorsque le service de catalogue met à jour un produit, il envoie un message à Kafka, qui est consommé par le service de commande pour mettre à jour les informations de produit dans la commande.
+
+Pour protéger ces microservices contre les accès non autorisés, une authentification basée sur des jetons peut être utilisée. 
+Lorsqu'un utilisateur tente d'accéder à un microservice, il doit fournir un jeton d'accès valide. 
+Si le jeton est valide, l'utilisateur est autorisé à accéder au microservice.
+
+Enfin, une API Gateway peut être utilisée pour exposer les microservices à l'extérieur. 
+L'API Gateway agit comme une passerelle entre l'application et le monde extérieur en fournissant une interface unifiée pour accéder aux microservices. 
+Lorsqu'un utilisateur accède à l'application, il envoie une requête à l'API Gateway, qui la redirige vers le microservice approprié en fonction de la requête.

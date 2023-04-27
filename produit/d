@@ -1,0 +1,9 @@
+pip install flask_mysqldb,pip install Flask
+pip install kafka-python
+python3 -m venv <name of environment>cd 
+pip install --no-binary :all: mysqlclient
+j'ai installer mysqlconnector https://dev.mysql.com/downloads/file/?id=517990
+j'ai verifier ma version python 
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient   pip install mysqlclient-1.4.6-cp38-cp38-win_amd64.whl
+https://mariadb.com/download-confirmation/?group-name=Data%20Access&release-notes-uri=https%3A%2F%2Fmariadb.com%2Fkb%2Fen%2Fmariadb-connector-c-3-3-4-release-notes%2F&documentation-uri=https%3A%2F%2Fmariadb.com%2Fkb%2Fen%2Fmariadb-connector-c%2F&download-uri=https%3A%2F%2Fdlm.mariadb.com%2F2862617%2FConnectors%2Fc%2Fconnector-c-3.3.4%2Fmariadb-connector-c-3.3.4-win32.msi&product-name=C%20connector&download-size=15.14%20MB
+
